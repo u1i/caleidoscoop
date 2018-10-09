@@ -1,2 +1,2 @@
-# caleidoscoop
-An API-enabled Kiosk System
+# python-wsgi-template
+Python, Bottle, Cherrypy
