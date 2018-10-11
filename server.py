@@ -1,4 +1,4 @@
-from my_bottle_app import app
+from caleidoscoop import app
 
 import cherrypy
 
