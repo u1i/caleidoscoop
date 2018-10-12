@@ -15,6 +15,6 @@
     }, 2000);
 </script>
 <body>
-  {{ message }}
+  {{ !render }}
 </body>
 </html>
