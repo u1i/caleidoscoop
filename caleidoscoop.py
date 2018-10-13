@@ -1,5 +1,5 @@
 from bottle import Bottle, request, view, response
-import time, io, json
+import time, io, json, markdown2
 app = Bottle()
 datastore="/tmp/cldscp.dat"
 
@@ -54,10 +54,16 @@ def do_api():
 @app.get('/')
 @view('dyn')
 def do_templ():
-	c = get_content()
 
+	out = "ready."
+
+	try:
+		c = get_content()
+	except:
 	#out = "<h1>hello!</h2><br>Updated at: " + str(c) + " " + str(int(time.time()))
-	out = "bla"
+		out = "some error in the content."
+		return(dict(render=out))
+
 	if c["type"] == "video":
 		out = '''<div align="center">
 		<video width="1280" height="720" controls autoplay muted loop>
@@ -65,6 +71,12 @@ def do_templ():
 		  Your browser does not support the video tag.
 		</video>
 		</div>'''
+
+	if c["type"] == "image":
+		out = "<div align='center'><img src='" + c['content'] + "' border='0'></div>"
+
+	if c["type"] == "markdown":
+		out = '<div style="color:white;">' + markdown2.markdown(c['content']) + '</div>'
 
 	if c["type"] == "youtube":
 		out = '''<div align="center">

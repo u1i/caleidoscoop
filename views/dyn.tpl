@@ -14,7 +14,7 @@
         });
     }, 2000);
 </script>
-<body>
+<body style="background-color:DARKSLATEGRAY;">
   {{ !render }}
 </body>
 </html>
