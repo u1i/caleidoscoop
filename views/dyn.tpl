@@ -4,7 +4,7 @@
     var previous = null;
     var current = null;
     setInterval(function() {
-        $.getJSON("/current", function(json) {
+        $.getJSON("{{ url }}", function(json) {
             current = JSON.stringify(json);
             if (previous && current && previous !== current) {
                 console.log('refresh');
