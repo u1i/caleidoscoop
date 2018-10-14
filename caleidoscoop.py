@@ -23,16 +23,23 @@ def get_content(data_url):
 
 @app.get('/')
 def root():
-	return(dict(message="nothing here." + b9y.endpoint))
+	return("caleidoscoop ready.")
 
 @app.get('/new')
 @view('new')
 def root():
 	uu = str(uuid.uuid4())
 	key = "c10p_" + uu.replace('-','')
-	b9y.set(key,"init")
+	b9y.set(key,'{"type": "image","content": "https://raw.githubusercontent.com/u1i/caleidoscoop/master/img/caleidoscoop_logo1.png","height": "0","width": "0"}')
+
 	route = b9y.create_route(key, 'application/json')
 	id = route.replace('/routes/','')
+
+	save={}
+	save["id"] = id
+	save["key"] = key
+	b9y.push('c10p_displays', json.dumps(save))
+
 	return(dict(url='/view/' + id, dataurl=b9y.endpoint + route, id=id, key=key))
 
 @app.get('/view/<id>')
