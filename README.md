@@ -9,3 +9,7 @@ You can easily build a kiosk display system with this to show videos and images 
 ## Components and Data Flow
 
 ![](https://raw.githubusercontent.com/u1i/caleidoscoop/master/img/c10p-diagram1.png)
+
+## Creating a new display is simple
+
+![](https://raw.githubusercontent.com/u1i/caleidoscoop/master/img/view1.png)
