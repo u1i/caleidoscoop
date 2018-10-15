@@ -13,3 +13,12 @@ You can easily build a kiosk display system with this to show videos and images 
 ## Creating a new display is simple
 
 ![](https://raw.githubusercontent.com/u1i/caleidoscoop/master/img/view1.png)
+
+## New display, ready for action
+
+![](https://raw.githubusercontent.com/u1i/caleidoscoop/master/img/view2.png)
+
+## Update the key in B9y to set new content
+
+`echo '{"type":"image","content":"http://blub.krash.net/katong.jpg","height":"0","width":"0"}' | curl -X PUT -d @- http://b9y/keys/$key -H $AUTH`
+
