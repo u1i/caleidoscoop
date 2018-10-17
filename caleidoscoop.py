@@ -40,7 +40,7 @@ def root():
 	save["key"] = key
 	b9y.push('c10p_displays', json.dumps(save))
 
-	return(dict(url='/view/' + id, dataurl=b9y.endpoint + route, id=id, key=key))
+	return(dict(url='/view/' + id, dataurl=b9y.endpoint + route, id=id, key=key, token=b9y.get_token()))
 
 @app.get('/view/<id>')
 @view('dyn')
