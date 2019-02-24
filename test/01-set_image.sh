@@ -10,4 +10,4 @@ key=$1
 token=$(./get_admin_token.sh)
 endpoint=$(cat endpoint.txt)
 
-echo '{"type":"image","content":"http://blub.krash.net/katong.jpg","height":"0","width":"0"}' | curl -X PUT -d @- $endpoint/keys/$key -H "Authorization: Bearer $token"
+echo '{"type":"image","content":"http://blub.t28.net/katong.jpg","height":"0","width":"0"}' | curl -X PUT -d @- $endpoint/keys/$key -H "Authorization: Bearer $token"

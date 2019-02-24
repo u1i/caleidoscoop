@@ -9,7 +9,7 @@ B9y Key: {{ key }}<br>&nbsp;<br>
 
 Example cURL command to update the display:<br>&nbsp;<br>
 
-<code>curl -X PUT -d '{"type": "image","content": "http://blub.krash.net/katong.jpg","height": "0","width": "0"}' -H "Authorization: Bearer {{ token }}" http://localhost:8080/keys/{{ key }}</code>
+<code>curl -X PUT -d '{"type": "image","content": "http://blub.t28.net/katong.jpg","height": "0","width": "0"}' -H "Authorization: Bearer {{ token }}" http://localhost:8080/keys/{{ key }}</code>
 
 </body>
 </html>
